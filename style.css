@@ -1,0 +1,14 @@
+.menu-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  list-style: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.menu-nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: 0.3s;
+}
