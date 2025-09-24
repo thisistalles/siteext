@@ -1,47 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IEADPE R1</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Início</a></li>
-          <li><a href="">Contribuir</a></li>
-          <li><a href="./horarios.html">Horarios</a></li>
-          <li><a href="./redessoci.html">Redes Sociais</a></li>
-          <li><a href="./localizacao.html">Localização</a></li>
-        </ul>
-      </nav>
-    </header>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redes Sociais | IEADPE Rurópolis 1</title>
 
-    <main>
-      <h1>REDES SOCIAIS</h1>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-      <a href="https://www.instagram.com/ieadper1" target="_blank">
-        <img src="imgs/instagram.png" alt="instagram logo icons"
-      /></a>
-
-      <a href="https://www.youtube.com/@IeadpeRurópolis1" target="_blank">
-        <img src="imgs/youtube.png" alt="youtube logo icons"
-      /></a>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+  <div class="container">
+    <nav class="navbar" aria-label="Menu principal">
+      <!-- Logo -->
+      <a href="./index.html" class="logo" aria-label="Página inicial">
+  <img src="imgs/icon.png" alt="IEADPE Rurópolis 1" class="logo-img">
+</a>
 
 
+      <!-- Botão do menu mobile -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <!-- Menu de navegação -->
+      <ul class="menu-nav" id="menu-nav">
+        <li><a href="./index.html" class="menu-link">Início</a></li>
+        <li>
+          <a href="https://www.ieadpe.org.br/site/quero-contribuir"
+             target="_blank" rel="noopener noreferrer" 
+             class="menu-link">Contribuir</a>
+        </li>
+        <li><a href="./horarios.html" class="menu-link">Horários</a></li>
+        <li><a href="./redessoci.html" class="menu-link">Redes Sociais</a></li>
+        <li><a href="./localizacao.html" class="menu-link active">Localização</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- JS no final do body -->
+<script src="script.js"></script>
 
 
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-small">
+    <div class="hero-content">
+      <h1 class="hero-title">Nossas Redes Sociais</h1>
+      <p class="hero-subtitle">Acompanhe nossas atualizações online</p>
+    </div>
+  </section>
 
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content" id="redes-sociais">
+    <div class="container">
+      <section class="social-section">
+        <h2 class="section-title">Conecte-se Conosco</h2>
+        <div class="social-links">
+          <a href="https://www.instagram.com/ieadper1" 
+             target="_blank" rel="noopener noreferrer" 
+             class="social-card">
+            <img src="imgs/instagram.png" alt="Instagram IEADPE R1">
+            <span>@ieadper1</span>
+          </a>
 
+          <a href="https://www.youtube.com/@IeadpeRurópolis1" 
+             target="_blank" rel="noopener noreferrer" 
+             class="social-card">
+            <img src="imgs/youtube.png" alt="YouTube IEADPE R1">
+            <span>IEADPE Rurópolis 1</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
 
-
-
-
-
-    </main>
-
-    <footer></footer>
-  </body>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <p>&copy; 2025 IEADPE Rurópolis 1. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
 </html>

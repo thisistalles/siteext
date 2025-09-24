@@ -1,38 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IEADPE R1</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localização | IEADPE Rurópolis 1</title>
 
-    <header>
-        
-      <nav>
-        <ul>
-        <li><a href="./index.html">Início</a></li>
-          <li><a href="">Contribuir</a></li>
-          <li><a href="./horarios.html">Horarios</a></li>
-            <li><a href="./redessoci.html">Redes Sociais</a></li>
-            <li><a href="./localizacao.html">Localização</a></li>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-        </ul>
-      </nav>
-    </header>
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+  <div class="container">
+    <nav class="navbar" aria-label="Menu principal">
+      <!-- Logo -->
+      <a href="./index.html" class="logo" aria-label="Página inicial">
+  <img src="imgs/icon.png" alt="IEADPE Rurópolis 1" class="logo-img">
+</a>
 
 
-    <main>
-      <h1>LOCALIZAÇÃO</h1>
+      <!-- Botão do menu mobile -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20597.93082563343!2d-35.069668!3d-8.4106079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aaf33cca3b8b33%3A0xcc0a7f92b09b555d!2sIEADPE%20RUROPOLIS%201!5e1!3m2!1spt-BR!2sbr!4v1758376495839!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Menu de navegação -->
+      <ul class="menu-nav" id="menu-nav">
+        <li><a href="./index.html" class="menu-link">Início</a></li>
+        <li>
+          <a href="https://www.ieadpe.org.br/site/quero-contribuir"
+             target="_blank" rel="noopener noreferrer" 
+             class="menu-link">Contribuir</a>
+        </li>
+        <li><a href="./horarios.html" class="menu-link">Horários</a></li>
+        <li><a href="./redessoci.html" class="menu-link">Redes Sociais</a></li>
+        <li><a href="./localizacao.html" class="menu-link active">Localização</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      
-      
-    </main>
+<!-- JS no final do body -->
+<script src="script.js"></script>
 
-    <footer></footer>
-  </body>
+  <!-- ===== HERO ===== -->
+  <section class="hero hero-small">
+    <div class="hero-content">
+      <h1 class="hero-title">Nossa Localização</h1>
+      <p class="hero-subtitle">Venha nos visitar</p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content" id="localizacao">
+    <div class="container">
+      <section class="location-section">
+        <h2 class="section-title">Como Chegar</h2>
+        <p class="location-description">
+          Estamos localizados em Rurópolis, Ipojuca - PE. Veja o mapa abaixo para encontrar a melhor rota
+          e venha participar conosco dos cultos e eventos da igreja.
+        </p>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20597.93082563343!2d-35.069668!3d-8.4106079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aaf33cca3b8b33%3A0xcc0a7f92b09b555d!2sIEADPE%20RUROPOLIS%201!5e1!3m2!1spt-BR!2sbr!4v1758376495839!5m2!1spt-BR!2sbr" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa IEADPE Rurópolis 1"></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <p>&copy; 2025 IEADPE Rurópolis 1. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
 </html>
