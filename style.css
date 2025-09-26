@@ -7,72 +7,138 @@
 
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #333;
   line-height: 1.6;
 }
 
-/* ======== VARIÁVEIS DE CORES ======== */
+/* ========== VARIÁVEIS ========== */
 :root {
   --primary-color: #00374e;
   --secondary-color: #ffd700;
   --text-color: #333;
-  --white: #ffffff;
+  --white: #fff;
   --max-width: 1100px;
 }
 
-/* ======== CONTAINER GLOBAL ======== */
+/* ========== CONTAINER GLOBAL ========== */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* ======== HEADER ======== */
+/* ========== HEADER / NAVBAR ========== */
 .header {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(--white);
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--white);
-  text-decoration: none;
 }
 
+.logo-img {
+  display: block;
+  height: 100px;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 65px;
+  }
+}
+
+/* Menu padrão */
 .menu-nav {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .menu-link {
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link.active {
   color: var(--secondary-color);
+  font-weight: 600;
 }
 
-/* ======== HERO ======== */
+/* Botão do menu mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Menu Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--primary-color);
+    flex-direction: column;
+    width: 200px;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .menu-nav.active {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ========== HERO ========== */
 .hero {
-  background: url("sua-imagem.jpg") center/cover no-repeat;
-  background-color: var(--primary-color);
+  background: url("imgs/BG\ 3.jpg") center/cover no-repeat var(--primary-color);
   height: 250px;
   display: flex;
   align-items: center;
@@ -93,7 +159,22 @@ body {
   font-weight: 400;
 }
 
-/* ======== MAIN CONTENT ======== */
+.hero-small {
+  height: 150px;
+}
+
+/* Responsividade Hero */
+@media (max-width: 768px) {
+  .hero {
+    height: 180px;
+    padding: 0.5rem;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== MAIN CONTENT ========== */
 .main-content {
   padding: 2rem 0;
 }
@@ -116,46 +197,16 @@ body {
   line-height: 1.8;
 }
 
-/* ======== FOOTER ======== */
-.footer {
-  background-color: var(--primary-color);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
-  .menu-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .hero {
-    height: 180px;
-    padding: 0.5rem;
-  }
-
-  .hero-title {
-    font-size: 1.5rem;
-  }
-
   .section-title {
     font-size: 1.5rem;
   }
-
   .content-section p {
     font-size: 0.95rem;
   }
 }
 
-/* ======== HORÁRIOS ======== */
-.hero-small {
-  height: 150px;
-}
-
+/* ========== HORÁRIOS ========== */
 .schedule {
   margin-top: 2rem;
   text-align: center;
@@ -187,13 +238,7 @@ body {
   background: #e9f5f8;
 }
 
-/* Ativo no menu */
-.menu-link.active {
-  color: var(--secondary-color);
-  font-weight: 600;
-}
-
-/* ======== REDES SOCIAIS ======== */
+/* ========== REDES SOCIAIS ========== */
 .social-section {
   margin-top: 2rem;
   text-align: center;
@@ -236,19 +281,18 @@ body {
   color: var(--secondary-color);
 }
 
-/* Ajustes responsivos */
+/* Responsividade Social */
 @media (max-width: 480px) {
   .social-card img {
     width: 60px;
     height: 60px;
   }
-
   .social-card span {
     font-size: 0.9rem;
   }
 }
 
-/* ======== LOCALIZAÇÃO ======== */
+/* ========== LOCALIZAÇÃO ========== */
 .location-section {
   margin-top: 2rem;
   text-align: center;
@@ -283,112 +327,12 @@ body {
     height: 300px;
   }
 }
-/* ======== MENU RESPONSIVO ======== */
 
-/* Container geral */
-.header {
-  background: var(--primary-color, #1e3a8a);
-  color: white;
-  padding: 1rem 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Logo */
-/* Logo com imagem */
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding-top: 20px;
- }
-
-.logo-img {
-  height: 100px; /* ajuste conforme o tamanho da sua logo */
-  width: auto;
-}
-
-/* Logo menor em mobile */
-@media (max-width: 480px) {
-  .logo-img {
-    height: 65px;
-  }
-}
-
-
-/* Menu desktop */
-.menu-nav {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-.menu-link {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.menu-link:hover,
-.menu-link.active {
-  color: #facc15; /* Destaque ao passar o mouse */
-}
-
-/* Botão do menu mobile */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-/* ======== RESPONSIVO ======== */
-@media (max-width: 768px) {
-  /* Botão aparece no mobile */
-  .menu-toggle {
-    display: block;
-  }
-
-  /* Menu escondido por padrão */
-  .menu-nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: var(--primary-color, #1e3a8a);
-    flex-direction: column;
-    width: 200px;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 10px 10px;
-    display: none; /* Oculto por padrão */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: slideDown 0.3s ease forwards;
-  }
-
-  /* Quando ativado */
-  .menu-nav.active {
-    display: flex;
-  }
-
-  /* Animação */
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
